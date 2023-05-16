@@ -1,0 +1,90 @@
+Datum und Uhrzeit: 2023-05-16 15:28:54.986039
+DATENSATZ CUSTOMERS
+Übersicht von Kunden-Datensatz
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 17000 entries, 0 to 16999
+Data columns (total 5 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   gender            14825 non-null  object 
+ 1   age               17000 non-null  int64  
+ 2   cust_id           17000 non-null  object 
+ 3   became_member_on  17000 non-null  int64  
+ 4   income            14825 non-null  float64
+dtypes: float64(1), int64(2), object(2)
+memory usage: 664.2+ KB
+None
+
+Datentypen im Kunden-Datensatz
+
+gender               object
+age                   int64
+cust_id              object
+became_member_on      int64
+income              float64
+dtype: object
+
+
+DATENSATZ OFFERS
+Übersicht von Angebote-Datensatz
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   Unnamed: 0  8 non-null      int64 
+ 1   reward      8 non-null      int64 
+ 2   channels    8 non-null      object
+ 3   difficulty  8 non-null      int64 
+ 4   duration    8 non-null      int64 
+ 5   offer_type  8 non-null      object
+ 6   id          8 non-null      object
+dtypes: int64(4), object(3)
+memory usage: 576.0+ bytes
+None
+
+Datentypen im Angebote-Datensatz
+
+Unnamed: 0     int64
+reward         int64
+channels      object
+difficulty     int64
+duration       int64
+offer_type    object
+id            object
+dtype: object
+
+
+DATENSATZ CONTACTS
+
+
+Übersicht von Kontakte-Datensatz
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 280468 entries, 0 to 280467
+Data columns (total 7 columns):
+ #   Column        Non-Null Count   Dtype 
+---  ------        --------------   ----- 
+ 0   Unnamed: 0    280468 non-null  int64 
+ 1   Unnamed: 0.1  280468 non-null  int64 
+ 2   person        280468 non-null  object
+ 3   event         280468 non-null  object
+ 4   time          280468 non-null  int64 
+ 5   type          280468 non-null  object
+ 6   val           280468 non-null  object
+dtypes: int64(3), object(4)
+memory usage: 15.0+ MB
+None
+
+Datentypen im Kontakte-Datensatz
+
+Unnamed: 0       int64
+Unnamed: 0.1     int64
+person          object
+event           object
+time             int64
+type            object
+val             object
+dtype: object
