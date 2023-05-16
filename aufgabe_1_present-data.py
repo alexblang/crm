@@ -1,5 +1,5 @@
-import pandas as pd
-import os
+import pandas as pd # für Datenimport
+import os # für Dateipfade
 
 
 
@@ -12,53 +12,37 @@ contacts_file = "data/contacts.csv"
 contacts_path = os.path.join(os.getcwd(), contacts_file)
 
 
-# Datensätze laden und anzeigen
+# Datensätze laden, Übersicht anzeigen und Datentypen ausgeben
 customers_data = pd.read_csv(customers_path)
-print("Kunden-Datensatz:")
+print("\nÜbersicht von Kunden-Datensatz:", )
 print(customers_data.head())
-
-# Angebote-Datensatz laden und anzeigen
-offers_data = pd.read_csv(offers_path)
-print("\nAngebote-Datensatz:")
-print(offers_data.head())
-
-# Kontakte-Datensatz laden und anzeigen
-contacts_data = pd.read_csv(contacts_path)
-print("\nKontakte-Datensatz:")
-print(contacts_data.head())
-
-
-
-# Datentypen im Kunden-Datensatz anzeigen
 print("\nDatentypen im Kunden-Datensatz:")
 print(customers_data.dtypes)
-# Spaltenbezeichnungen des Kunden-Datensatzes
-customers_columns = list(customers_data.columns)
-print("Spaltenbezeichnungen des Kunden-Datensatzes:")
-print(customers_columns)
 
-
-# Datentypen im Angebote-Datensatz anzeigen
+offers_data = pd.read_csv(offers_path)
+print("\nÜbersicht von Angebote-Datensatz:")
+print(offers_data.head())
 print("\nDatentypen im Angebote-Datensatz:")
 print(offers_data.dtypes)
-# Spaltenbezeichnungen des Angebote-Datensatzes
-offers_columns = list(offers_data.columns)
-print("\nSpaltenbezeichnungen des Angebote-Datensatzes:")
-print(offers_columns)
 
-# Datentypen im Kontakte-Datensatz anzeigen
+contacts_data = pd.read_csv(contacts_path)
+print("\nÜbersicht von Kontakte-Datensatz:")
+print(contacts_data.head())
 print("\nDatentypen im Kontakte-Datensatz:")
 print(contacts_data.dtypes)
-# Spaltenbezeichnungen des Kontakte-Datensatzes
-contacts_columns = list(contacts_data.columns)
-print("\nSpaltenbezeichnungen des Kontakte-Datensatzes:")
-print(contacts_columns)
 
 
+# Datensätze aufräumen
 
+# For-Schleife zum Vergleichen der Werte in den ersten beiden Spalten
+# Können die ersten beiden Spalten gestrichen werden?
+for index, row in customers_data.iterrows():
+    if row['Unnamed: 0'] - row['Unnamed: 0.1'] != 0:
+        print(f"Fehler in Zeile {index+1}: Wert von Spalte B ist nicht gleich dem Wert von Spalte A")
 
+# Entscheidung dafür, die ersten beiden Spalten zu streichen
 
-
+customers_data = customers_data.drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1) # drop-Funktion gibt es ein neues DataFrame aus
 
 
 """ # Statistische Zusammenfassung der numerischen Spalten im Kunden-Datensatz anzeigen
