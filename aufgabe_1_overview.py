@@ -28,10 +28,20 @@ for index, row in customers_data.iterrows():
     if row['Unnamed: 0'] - row['Unnamed: 0.1'] != 0:
         print(f"Fehler in Zeile {index+1}: Wert von Spalte B ist nicht gleich dem Wert von Spalte A")
 
-# Entscheidung dafür, die ersten beiden Spalten zu streichen
-
+# Entscheidung dafür, die ersten beiden Spalten von customers_data zu streichen
 customers_data = customers_data.drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1) # drop-Funktion gibt es ein neues DataFrame aus
 
+# bei customers_data die ID zum Index machen
+customers_data.index = customers_data["cust_id"]
+
+# Datumsangaben in customers.csv zu einem datetime64 Object aus Pandas umwandeln, um danach weitere Berechnungen machen zu können
+customers_data["became_member_on"] = pd.to_datetime(customers_data["became_member_on"], format='%Y%m%d')
+
+# Die ersten beiden Spalten von contacts_data streichen
+contacts_data = contacts_data.drop(['Unnamed', 'Unnamed: 0'], axis=1) # musste erste Spalte der CSV anpassen um greifen zu können
+
+# bei customers_data die ID zum Index machen
+contacts_data.index = contacts_data["person"]
 
 # Hier wird der Überblick gespeichert
 output_file = "data_overview.txt"
@@ -47,20 +57,20 @@ with open(output_file, "w") as file:
     print("\n\nDATENSATZ CUSTOMERS")
     print("Übersicht von Kunden-Datensatz\n")
     print(customers_data.info())
-    print("\nDatentypen im Kunden-Datensatz\n")
-    print(customers_data.dtypes)
+    print("\nErste fünf Zeilen\n")
+    print(customers_data.head())
 
     print("\n\nDATENSATZ OFFERS")
     print("Übersicht von Angebote-Datensatz\n")
     print(offers_data.info())
-    print("\nDatentypen im Angebote-Datensatz\n")
-    print(offers_data.dtypes)
+    print("\nErste fünf Zeilen\n")
+    print(offers_data.head())
 
     print("\n\nDATENSATZ CONTACTS")
     print("\n\nÜbersicht von Kontakte-Datensatz\n")
     print(contacts_data.info())
-    print("\nDatentypen im Kontakte-Datensatz\n")
-    print(contacts_data.dtypes)
+    print("\nErste fünf Zeilen\n")
+    print(contacts_data.head())
 
     # Rückkehr zur Standardausgabe
     sys.stdout = original_stdout
