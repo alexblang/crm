@@ -1,4 +1,6 @@
-Datum und Uhrzeit: 2023-05-16 15:28:54.986039
+Datum und Uhrzeit: 2023-05-16 15:33:56.787511
+
+
 DATENSATZ CUSTOMERS
 Übersicht von Kunden-Datensatz
 

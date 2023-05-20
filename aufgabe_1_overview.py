@@ -44,7 +44,7 @@ with open(output_file, "w") as file:
 
     print("Datum und Uhrzeit:", datetime.now())
     
-    print("DATENSATZ CUSTOMERS")
+    print("\n\nDATENSATZ CUSTOMERS")
     print("Übersicht von Kunden-Datensatz\n")
     print(customers_data.info())
     print("\nDatentypen im Kunden-Datensatz\n")
