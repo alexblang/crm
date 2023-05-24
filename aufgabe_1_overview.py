@@ -31,8 +31,7 @@ for index, row in customers_data.iterrows():
 # Entscheidung dafür, die ersten beiden Spalten von customers_data zu streichen
 customers_data = customers_data.drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1) # drop-Funktion gibt es ein neues DataFrame aus
 
-# bei customers_data die ID zum Index machen
-customers_data.index = customers_data["cust_id"]
+customers_data.index = customers_data["cust_id"] # ID zum Index machen
 
 # Datumsangaben in customers.csv zu einem datetime64 Object aus Pandas umwandeln, um danach weitere Berechnungen machen zu können
 customers_data["became_member_on"] = pd.to_datetime(customers_data["became_member_on"], format='%Y%m%d')
@@ -40,8 +39,9 @@ customers_data["became_member_on"] = pd.to_datetime(customers_data["became_membe
 # Die ersten beiden Spalten von contacts_data streichen
 contacts_data = contacts_data.drop(['Unnamed', 'Unnamed: 0'], axis=1) # musste erste Spalte der CSV anpassen um greifen zu können
 
-# bei customers_data die ID zum Index machen
-contacts_data.index = contacts_data["person"]
+contacts_data.index = contacts_data["person"] # person zum Index machen
+
+offers_data = offers_data.drop(["Unnamed"], axis=1)
 
 # Hier wird der Überblick gespeichert
 output_file = "data_overview.txt"
@@ -77,10 +77,6 @@ with open(output_file, "w") as file:
 
 # Bestätigungsnachricht
 print(f"Der Überblick über die Daten wurde in die Datei {output_file} geschrieben.")
-
-
-# Übersicht anzeigen und Datentypen ausgeben
-
 
 
 

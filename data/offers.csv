@@ -1,4 +1,4 @@
-,reward,channels,difficulty,duration,offer_type,id
+Unnamed,reward,channels,difficulty,duration,offer_type,id
 0,10,"['email', 'mobile', 'social']",10,7,bogo,ae264e3637204a6fb9bb56bc8210ddfd
 1,10,"['web', 'email', 'mobile', 'social']",10,5,bogo,4d5c57ea9a6940dd891ad53e9dbe8da0
 3,5,"['web', 'email', 'mobile']",5,7,bogo,9b98b8c7a33c4b65b9aebfe6a799e6d9
